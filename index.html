@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SNES Slugfest '96</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="game-wrap">
+    <header>
+      <h1>SNES Slugfest '96</h1>
+      <p class="subtitle">Arcade baseball with chunky pixels and deep baseball rules.</p>
+    </header>
+
+    <section class="hud" aria-label="scoreboard">
+      <div class="score-card">
+        <div><span id="awayTeam">Visitors</span>: <strong id="awayScore">0</strong></div>
+        <div><span id="homeTeam">Home</span>: <strong id="homeScore">0</strong></div>
+        <div>Inning: <strong id="inning">1 ▲</strong></div>
+      </div>
+      <div class="count-card">
+        <div>Outs: <strong id="outs">0</strong></div>
+        <div>Count: <strong><span id="balls">0</span>-<span id="strikes">0</span></strong></div>
+        <div>Pitcher: <strong id="pitcherEnergy">100%</strong></div>
+      </div>
+      <div class="bases-card">
+        <div class="diamond" aria-label="base runners">
+          <span class="base first" id="base1"></span>
+          <span class="base second" id="base2"></span>
+          <span class="base third" id="base3"></span>
+          <span class="base home"></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="actions">
+      <div class="panel">
+        <h2>Pitching</h2>
+        <div class="btn-row">
+          <button data-pitch="fastball">Fastball</button>
+          <button data-pitch="curveball">Curveball</button>
+          <button data-pitch="changeup">Changeup</button>
+          <button data-pitch="slider">Slider</button>
+          <button id="intentionalWalk">Intentional Walk</button>
+        </div>
+      </div>
+      <div class="panel">
+        <h2>Batting</h2>
+        <div class="btn-row">
+          <button data-swing="power">Power Swing</button>
+          <button data-swing="contact">Contact Swing</button>
+          <button data-swing="bunt">Bunt</button>
+          <button id="takePitch">Take Pitch</button>
+        </div>
+      </div>
+      <div class="panel">
+        <h2>Base Running & Field</h2>
+        <div class="btn-row">
+          <button id="stealBtn">Steal Attempt</button>
+          <button id="sacrifice">Sacrifice Bunt Play</button>
+          <button id="infieldIn">Infield In</button>
+          <button id="normalDepth">Normal Defense</button>
+          <button id="changePitcher">Change Pitcher</button>
+        </div>
+      </div>
+    </section>
+
+    <canvas id="gameCanvas" width="640" height="360" aria-label="pixel baseball field"></canvas>
+
+    <section class="log-panel">
+      <h2>Play-by-Play</h2>
+      <ul id="log"></ul>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

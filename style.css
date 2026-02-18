@@ -1,0 +1,98 @@
+:root {
+  --bg: #101820;
+  --panel: #1a2d3f;
+  --panel2: #284a63;
+  --ink: #e9f1ff;
+  --pixel: #77b255;
+  --pixel-dark: #3b7d2e;
+  --accent: #ffcb3b;
+  --danger: #ff5c5c;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: radial-gradient(circle at top, #20384f, var(--bg));
+  color: var(--ink);
+  font-family: "Courier New", Courier, monospace;
+  image-rendering: pixelated;
+}
+
+.game-wrap {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+h1, h2, p { margin: 0; }
+header { margin-bottom: 12px; }
+.subtitle { color: #b8d5ff; }
+
+.hud, .actions {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.score-card, .count-card, .bases-card, .panel, .log-panel {
+  border: 4px solid #0b1118;
+  background: linear-gradient(180deg, var(--panel2), var(--panel));
+  box-shadow: 0 0 0 3px #35536e;
+  padding: 10px;
+}
+
+.btn-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+button {
+  border: 3px solid #0a0a0a;
+  background: #38789c;
+  color: #fff;
+  font-family: inherit;
+  padding: 6px 8px;
+  cursor: pointer;
+}
+button:hover { filter: brightness(1.15); }
+button:active { transform: translateY(1px); }
+
+#gameCanvas {
+  width: 100%;
+  border: 5px solid #0a0a0a;
+  background: #5cb85c;
+  box-shadow: 0 0 0 3px #2b5930;
+  margin-bottom: 12px;
+}
+
+.log-panel {
+  max-height: 220px;
+  overflow: auto;
+}
+#log {
+  margin: 8px 0 0;
+  padding-left: 18px;
+}
+#log li { margin-bottom: 4px; }
+
+.diamond {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  position: relative;
+  transform: rotate(45deg);
+  border: 4px solid #ddd;
+}
+.base {
+  width: 14px;
+  height: 14px;
+  position: absolute;
+  background: #676767;
+  border: 2px solid #111;
+}
+.base.home { bottom: -8px; left: 40px; background: #fff; }
+.base.first { right: -8px; top: 40px; }
+.base.second { top: -8px; left: 40px; }
+.base.third { left: -8px; top: 40px; }
+.base.occupied { background: var(--accent); }
+
+@media (max-width: 880px) {
+  .hud, .actions { grid-template-columns: 1fr; }
+}
