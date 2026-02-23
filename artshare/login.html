@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>ArtShare · Login</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/forms.css">
+  <link rel="stylesheet" href="css/utilities.css">
+</head>
+<body>
+  <header class="top-header">
+    <a class="logo" href="index.html">ArtShare</a>
+    <form class="search-form" role="search"></form>
+    <div class="header-controls">
+      <a class="upload-btn btn" href="upload.html">Upload</a>
+      <a class="notification-btn btn" href="notifications.html">Notifications</a>
+      <div class="profile-menu"></div>
+    </div>
+  </header>
+  <div class="app-layout">
+    <aside class="sidebar">
+      <nav>
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="explore.html">Explore</a>
+        <a class="nav-link" href="collection.html">Collection</a>
+        <a class="nav-link" href="messages.html">Messages</a>
+        <a class="nav-link" href="moderation.html">Moderation</a>
+        <a class="nav-link" href="ai-policy.html">AI Policy</a>
+        <a class="nav-link" href="ai-verification.html">AI Verification</a>
+        <a class="nav-link" href="settings.html">Settings</a>
+      </nav>
+    </aside>
+    <main class="main-content"><h1>Login</h1><form id="login-form" class="form-card mt-16"><div class="form-row"><label for="email">Email</label><input id="email" name="email" type="email" required></div><div class="form-row"><label for="password">Password</label><input id="password" name="password" type="password" required></div><button class="btn btn-primary" type="submit">Login</button><p class="mt-8">New here? <a href="signup.html">Create account</a></p></form></main>
+  </div>
+  <script type="module">import {initApp} from './js/app.js';initApp();import {loginUser} from './js/auth.js';document.getElementById('login-form').addEventListener('submit',e=>{e.preventDefault();const fd=new FormData(e.target);const u=loginUser(fd.get('email'),fd.get('password'));if(!u)return alert('Invalid credentials');location.href=new URLSearchParams(location.search).get('redirect')||'index.html';});</script>
+</body>
+</html>

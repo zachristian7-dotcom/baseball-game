@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>ArtShare · Watch</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/forms.css">
+  <link rel="stylesheet" href="css/utilities.css">
+</head>
+<body>
+  <header class="top-header">
+    <a class="logo" href="index.html">ArtShare</a>
+    <form class="search-form" role="search"></form>
+    <div class="header-controls">
+      <a class="upload-btn btn" href="upload.html">Upload</a>
+      <a class="notification-btn btn" href="notifications.html">Notifications</a>
+      <div class="profile-menu"></div>
+    </div>
+  </header>
+  <div class="app-layout">
+    <aside class="sidebar">
+      <nav>
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="explore.html">Explore</a>
+        <a class="nav-link" href="collection.html">Collection</a>
+        <a class="nav-link" href="messages.html">Messages</a>
+        <a class="nav-link" href="moderation.html">Moderation</a>
+        <a class="nav-link" href="ai-policy.html">AI Policy</a>
+        <a class="nav-link" href="ai-verification.html">AI Verification</a>
+        <a class="nav-link" href="settings.html">Settings</a>
+      </nav>
+    </aside>
+    <main class="main-content"><div id="watch-root"></div></main>
+  </div>
+  <script type="module">import {initApp} from './js/app.js';initApp();import {initWatchPage} from './js/watch.js';initWatchPage();</script>
+</body>
+</html>
